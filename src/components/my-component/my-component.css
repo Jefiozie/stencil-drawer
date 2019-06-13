@@ -1,0 +1,47 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.drawer-container {
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+  overflow: hidden;
+  border: 1px solid #ccc;
+}
+
+.drawer {
+  padding-right: 20px;
+  background: gray;
+  border-right: 1px solid #ccc;
+  position: relative;
+  width: 280px;
+  -webkit-transform: none;
+  transform: translate3d(-100%, 0, 0);
+  z-index: 2;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  will-change: transform;
+}
+.drawer-content {
+  width: 100%;
+  height: 100%;
+}
+.drawer.open {
+  transform: none;
+}
+
+.content {
+  flex-grow: 1;
+  flex-shrink: 1;
+  display: block;
+  height: 100%;
+  overflow: auto;
+  will-change: contents;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.content.close {
+  margin-left: -280px;
+}

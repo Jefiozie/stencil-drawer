@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Stencil Component Starter</title>
+
+    <script type="module" src="/build/example-drawer.esm.js"></script>
+    <script nomodule src="/build/example-drawer.js"></script>
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <my-component>
+      <ul slot="drawer-content">
+        <li>Menu 1</li>
+        <li>Menu 2</li>
+        <li>Menu 3</li>
+        <li>Menu 4</li>
+        <li>Menu 5</li>
+      </ul>
+      <div slot="content">
+        Main
+      </div>
+    </my-component>
+    <button id="toggleBtn">Toggle drawer</button>
+  </body>
+  <script>
+    const btn = document.getElementById("toggleBtn");
+    const drawer = document.querySelector('my-component');
+    btn.addEventListener("click", () => {
+      drawer.toggleDrawer();
+    });
+  </script>
+</html>
